@@ -17,13 +17,13 @@ const App = () => {
     fullNameEn: "Shahd Hisham",
     fullNameAr: "شهد هشام",
     brandEn: "VAI Developments",
-    roleEn: "Marketing Manager",
-    roleAr: "مدير التسويق",
+    roleEn: "Marketing Supervisor", 
+    roleAr: "مشرف تسويق",
     phone: "+201006147950",
     whatsapp: "https://wa.me/201006147950",
     facebook: "https://www.facebook.com/share/1DP1yCaEMA/",
     instagram: "https://www.instagram.com/julnarperfume?igsh=MWtsNjlxc3lhdm5seA==",
-    cvUrl: "/shahd-hisham-cv.pdf" // Put your CV file in the 'public' folder
+    cvUrl: "/shahd-hisham-cv.pdf" 
   };
 
   const downloadVCard = () => {
@@ -53,21 +53,23 @@ END:VCARD`;
     en: {
       name: userData.fullNameEn,
       role: `${userData.roleEn} @ ${userData.brandEn}`,
-      skills: ["Brand Strategy", "Luxury Marketing", "Social Media", "Customer Relations"],
+      skills: ["Team Leadership", "Market Analysis", "Campaign Management", "Brand Strategy"],
       cvBtn: "DOWNLOAD CV",
       saveBtn: "Save Contact",
       callBtn: "Direct Call",
-      expertise: "MARKETING FOCUS",
+      chatBtn: "WhatsApp",
+      expertise: "SUPERVISORY FOCUS",
       status: "ONLINE NOW"
     },
     ar: {
       name: userData.fullNameAr,
       role: `${userData.roleAr} @ ${userData.brandEn}`,
-      skills: ["استراتيجية العلامة التجارية", "التسويق الفاخر", "وسائل التواصل الاجتماعي", "علاقات العملاء"],
+      skills: ["قيادة الفريق", "تحليل السوق", "إدارة الحملات", "استراتيجية العلامة التجارية"],
       cvBtn: "تحميل السيرة الذاتية",
       saveBtn: "حفظ جهة الاتصال",
       callBtn: "اتصال مباشر",
-      expertise: "مجال الخبرة",
+      chatBtn: "واتساب",
+      expertise: "مجال الإشراف",
       status: "متصل الآن"
     }
   };
@@ -143,7 +145,7 @@ END:VCARD`;
             </div>
           </div>
 
-          {/* Marketing Skills Section */}
+          {/* Skills Section */}
           <div className="md:col-span-4 bg-[#111419] border border-white/5 rounded-[2.5rem] p-8">
             <h3 className="text-[9px] font-black text-gray-500 uppercase mb-6 tracking-[0.4em]">{t.expertise}</h3>
             <div className="flex flex-col gap-2.5">
@@ -155,32 +157,36 @@ END:VCARD`;
             </div>
           </div>
 
-          {/* NEW DOWNLOAD CV SECTION */}
+          {/* CV Section */}
           <a 
             href={userData.cvUrl} 
             download 
-            className="md:col-span-6 bg-white rounded-[2.5rem] flex flex-col items-center justify-center p-10 hover:bg-gray-200 transition-all cursor-pointer group shadow-2xl"
+            className="md:col-span-5 bg-white rounded-[2.5rem] flex flex-col items-center justify-center p-10 hover:bg-gray-200 transition-all cursor-pointer group shadow-2xl"
           >
              <FileDown size={36} className="text-black mb-3 group-hover:translate-y-1 transition-transform" />
              <span className="text-black font-black text-xl tracking-tighter uppercase">{t.cvBtn}</span>
           </a>
 
+          {/* New WhatsApp Button Design */}
           <a 
             href={userData.whatsapp} 
             target="_blank" 
             rel="noreferrer" 
-            className="md:col-span-2 bg-[#161a20] rounded-[2.5rem] flex items-center justify-center hover:bg-[#25D366]/10 transition-all group border border-white/5"
+            className="md:col-span-3 bg-[#25D366] rounded-[2.5rem] flex flex-col items-center justify-center p-8 hover:scale-[1.02] transition-all group shadow-lg"
           >
-            <MessageCircle size={36} className="text-white group-hover:text-[#25D366] transition-colors" fill="currentColor" />
+            <MessageCircle size={32} className="text-white mb-2" fill="white" />
+            <span className="text-white font-bold text-[10px] uppercase tracking-[0.2em]">{t.chatBtn}</span>
           </a>
 
         </div>
 
+        {/* Footer */}
         <footer className="mt-16 pb-8 text-center opacity-40 text-[8px] font-bold tracking-[0.6em] uppercase text-white">
-          CraftHub © 2026
+          TechNova © 2026
         </footer>
       </div>
 
+      {/* Global Styles */}
       <style dangerouslySetInnerHTML={{ __html: `
         @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Inter:wght@400;700;900&display=swap');
         .font-arabic { font-family: 'Cairo', sans-serif; }
